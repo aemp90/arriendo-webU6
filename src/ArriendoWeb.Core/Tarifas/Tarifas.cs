@@ -18,6 +18,6 @@ public static class Tarifas
     public static decimal TarifaBase(decimal tarifaDia, int dias, DateTime fechaSalida, int cantArriendos)
     {
         var bruto = tarifaDia * dias * FactorTemporada(fechaSalida) * FactorFrecuente(cantArriendos);
-        return Math.Round(bruto, 0, MidpointRounding.ToEven);
+        return Math.Round(bruto, 0, MidpointRounding.AwayFromZero); // Redondeo al par, como Delphi.
     }
 }
